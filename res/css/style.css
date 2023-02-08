@@ -22,6 +22,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
+ 
 }
 
 #mainStartingContent {
@@ -121,7 +122,24 @@ h1 {
 }
 
 .mole:hover {
-    background-color: brown;
+    background-color: red;
     opacity: 0.5;
 
+}
+#musicButton{
+    bottom: 10px;
+    left: 10px;
+    position: absolute;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 1em;
+    padding: 1em;
+    cursor: pointer;
+    transition: .5s;
+}
+#musicButton:hover{
+   background-color: black;
+   border: 1px solid white;
+   color: white;
 }

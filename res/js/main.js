@@ -1,5 +1,6 @@
 const play = document.getElementById("play");
 const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
 const gameBox = document.getElementById("gameBox");
 const backButton = document.getElementById("backButton");
 const mainStartingContent = document.getElementById("mainStartingContent");
@@ -10,6 +11,14 @@ const grid = document.getElementById("grid");
 const mole = document.querySelector(".mole");
 const score = document.querySelector("#score");
 
+musicButton.onmousedown = () => {
+  music.src = "https://www.youtube.com/embed/pDKvYBTZ1i4?autoplay=1";
+
+}
+musicButton.onmouseover = () => {
+  music.src = "";
+ 
+}
 play.onclick = () => {
     mainStartingContent.style.display = "none";
     backButton.style.display = "block";
@@ -17,7 +26,7 @@ play.onclick = () => {
     grid.style.display = "flex";
     document.body.style.backgroundImage = "none";
     gameBox.style.display = "block";
-    music.src = "https://www.youtube.com/embed/pDKvYBTZ1i4?autoplay=1";
+   
    
 }
 backButton.onclick = () => {
@@ -25,7 +34,7 @@ backButton.onclick = () => {
     backButton.style.display = "none";
     scoreText.style.display = "none";
     grid.style.display = "none";
-    music.src = "";
+   
     document.body.style.backgroundImage = "url(./res/img/background.gif)";
 }
 
@@ -63,7 +72,6 @@ squares.forEach((square) => {
         scoreText.style.display = "none";
         grid.style.display = "none";
         document.body.style.backgroundImage = "url(./res/img/mainBackground.jfif)";
-        music.src = "";
     }
    
   });
