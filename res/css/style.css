@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap');
+
 * {
     user-select: none;
     box-sizing: border-box;
@@ -53,7 +54,8 @@ h1 {
     font-size: large;
     border-radius: 1em;
 }
-#backButton{
+
+#backButton {
     display: none;
     position: absolute;
     top: 0px;
@@ -65,7 +67,8 @@ h1 {
     transition: .5s ease;
     border: none;
 }
-#backButton:hover{
+
+#backButton:hover {
     background-color: transparent;
     color: white;
     text-decoration: underline;
@@ -75,4 +78,27 @@ h1 {
     transform: scale(1.5);
     border-radius: 2em;
     border: 1px solid white;
+}
+
+#grid {
+    width: 620px;
+    height: 620px;
+    display: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-top: 130px;
+}
+
+#square {
+    height: 200px;
+    width: 200px;
+    border: 3px solid whitesmoke;
+    transition: 0.5s;
+    border-radius: 50%;
+
+}
+
+#square:hover {
+    border: 3px solid gold;
 }
