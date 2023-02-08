@@ -80,25 +80,48 @@ h1 {
     border: 1px solid white;
 }
 
+#scoreText {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: white;
+    display: none;
+    font-size: x-large;
+}
+
+
 #grid {
+    padding-top: 85px;
     width: 620px;
     height: 620px;
     display: none;
     gap: 10px;
     flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.42);
     margin: auto;
-    padding-top: 130px;
+
 }
 
-#square {
+.square {
     height: 200px;
     width: 200px;
     border: 3px solid whitesmoke;
-    transition: 0.5s;
     border-radius: 50%;
+    transition: 0.5s;
+    background-color: white;
 
 }
 
-#square:hover {
-    border: 3px solid gold;
+
+.mole {
+    background-image: url(../img/mole.png);
+    background-size: cover;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.mole:hover {
+    background-color: brown;
+    opacity: 0.5;
+
 }
