@@ -23,7 +23,7 @@ backButton.onclick = () => {
     backButton.style.display = "none";
     scoreText.style.display = "none";
     grid.style.display = "none";
-    document.body.style.backgroundImage = "url(./res/img/mainBackground.jfif)";
+    document.body.style.backgroundImage = "url(./res/img/background.gif)";
 }
 
 
