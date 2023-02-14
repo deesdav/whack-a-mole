@@ -8,7 +8,7 @@ const scoreText = document.getElementById("scoreText");
 
 const rounds = document.querySelectorAll(".round");
 const gameArea9x9 = document.getElementById("gameArea9x9");
-const lunar = document.querySelector(".lunar");
+const lunars = document.querySelectorAll(".lunar");
 const score = document.querySelector("#score");
 
 
@@ -40,7 +40,7 @@ let strikePosi;
 let timerId = 0;
 
 function randomRound() {
-  rounds.forEach((round) => {
+  [...rounds].forEach((round) => {
     round.classList.remove("lunar");
   });
 
@@ -50,36 +50,40 @@ function randomRound() {
   strikePosi = randomRound.id;
 }
 
-rounds.forEach((round) => {
+[...rounds].forEach((round) => {
   round.addEventListener("click", (k) => {
     console.log(k);
-
+    
     if (round.id == strikePosi) {
       result += 10;
       score.innerHTML = result;
       strikePosi = 0;
     }
-    if (result > 300) {
+    if (result >= 310) {
       alert(
-        "You reached score above 300, so now, if you want to play aqain click on 'ok' and reload the page."
+        "You reached score 300, so now, if you want to play aqain click on 'ok' and play."
       );
       mainStartingContent.style.display = "flex";
       backButton.style.display = "none";
       scoreText.style.display = "none";
       gameArea9x9.style.display = "none";
       document.body.style.backgroundImage = "url(./res/img/background.gif)";
+      result -= 310;
+      score.innerHTML = result;
     }
   });
 });
 
-let clickToFast = 500;
 
-rounds.onclick = () => {
-  clickToFast += 10;
-};
+const randomLimit = Math.floor(Math.random() * (250, 500) + 150);
+window.onload = () => {
+  console.log(randomLimit);
+  alert("this game has a random speed, so sometimes you can have slows speed or fast speed of a lunar.")
+
+}
 
 function moveLunar() {
-  timerId = setInterval(randomRound, clickToFast);
+  timerId = setInterval(randomRound, randomLimit);
 }
 
 moveLunar();
