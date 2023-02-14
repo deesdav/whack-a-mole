@@ -94,6 +94,22 @@ h1 {
     color: white;
     display: none;
     font-size: x-large;
+    text-shadow: 0 0 25px red;
+}
+#speedText {
+    position: absolute;
+    top: 110px;
+    left: 50px;
+    color: white;
+    display: none;
+    font-size: x-large;
+    text-shadow: 0 0 25px red;
+}
+#scoreText span {
+    text-shadow: 0 0 25px red;
+}
+#speedText span{
+    text-shadow: 0 0 25px red;
 }
 
 

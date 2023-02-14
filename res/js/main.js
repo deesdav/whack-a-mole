@@ -5,11 +5,13 @@ const gameBox = document.getElementById("gameBox");
 const backButton = document.getElementById("backButton");
 const mainStartingContent = document.getElementById("mainStartingContent");
 const scoreText = document.getElementById("scoreText");
+const speedText = document.getElementById("speedText");
 
 const rounds = document.querySelectorAll(".round");
 const gameArea9x9 = document.getElementById("gameArea9x9");
 const lunars = document.querySelectorAll(".lunar");
 const score = document.querySelector("#score");
+const speed = document.querySelector("#speed");
 
 
 musicButton.onmousedown = () => {
@@ -22,6 +24,7 @@ play.onclick = () => {
   mainStartingContent.style.display = "none";
   backButton.style.display = "block";
   scoreText.style.display = "block";
+  speedText.style.display = "block";
   gameArea9x9.style.display = "flex";
   document.body.style.backgroundImage = "none";
   gameBox.style.display = "block";
@@ -30,6 +33,7 @@ backButton.onclick = () => {
   mainStartingContent.style.display = "flex";
   backButton.style.display = "none";
   scoreText.style.display = "none";
+  speedText.style.display = "none";
   gameArea9x9.style.display = "none";
 
   document.body.style.backgroundImage = "url(./res/img/background.gif)";
@@ -70,12 +74,19 @@ function randomRound() {
       document.body.style.backgroundImage = "url(./res/img/background.gif)";
       result -= 310;
       score.innerHTML = result;
+      
     }
   });
 });
 
 
 const randomLimit = Math.floor(Math.random() * (250, 500) + 150);
+
+let resultSpeed = 0;
+resultSpeed = randomLimit;
+speed.innerHTML = randomLimit;
+
+
 window.onload = () => {
   console.log(randomLimit);
   alert("this game has a random speed, so sometimes you can have slows speed or fast speed of a lunar.")
