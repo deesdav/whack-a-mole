@@ -86,7 +86,7 @@ speed.innerHTML = randomLimit + " ms";
 window.onload = () => {
   console.log(randomLimit);
   alert(
-    "this game has a random speed, so sometimes you can have slows speed or fast speed of a lunar."
+    "this game has a random speed, so sometimes you can have slow speed or fast speed of a lunar."
   );
 };
 
