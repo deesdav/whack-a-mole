@@ -13,7 +13,6 @@ const lunars = document.querySelectorAll(".lunar");
 const score = document.querySelector("#score");
 const speed = document.querySelector("#speed");
 
-
 musicButton.onmousedown = () => {
   music.src = "https://www.youtube.com/embed/pDKvYBTZ1i4?autoplay=1";
 };
@@ -27,7 +26,7 @@ play.onclick = () => {
   speedText.style.display = "block";
   gameArea9x9.style.display = "flex";
   document.body.style.backgroundImage = "none";
-  gameBox.style.display = "block";
+  document.body.style.backgroundImage = "url(./res/img/background.jpg)";
 };
 backButton.onclick = () => {
   mainStartingContent.style.display = "flex";
@@ -35,7 +34,6 @@ backButton.onclick = () => {
   scoreText.style.display = "none";
   speedText.style.display = "none";
   gameArea9x9.style.display = "none";
-
   document.body.style.backgroundImage = "url(./res/img/background.gif)";
 };
 
@@ -57,45 +55,43 @@ function randomRound() {
 [...rounds].forEach((round) => {
   round.addEventListener("click", (k) => {
     console.log(k);
-    
+
     if (round.id == strikePosi) {
       result += 10;
-      score.innerHTML = result;
+      score.innerHTML = result + " pts";
       strikePosi = 0;
     }
     if (result >= 310) {
       alert(
-        "You reached score 300, so now, if you want to play aqain click on 'ok' and play."
+        "You reached score 300, so now, if you want to play again click on 'ok' and if you want to change speed (difficulty) you must reload the page."
       );
       mainStartingContent.style.display = "flex";
       backButton.style.display = "none";
       scoreText.style.display = "none";
+      speedText.style.display = "none";
       gameArea9x9.style.display = "none";
       document.body.style.backgroundImage = "url(./res/img/background.gif)";
       result -= 310;
-      score.innerHTML = result;
-      
+      score.innerHTML = result + " pts";
     }
   });
 });
 
-
-const randomLimit = Math.floor(Math.random() * (250, 500) + 150);
+const randomLimit = Math.floor(Math.random() * (250, 600) + 150);
 
 let resultSpeed = 0;
 resultSpeed = randomLimit;
-speed.innerHTML = randomLimit;
-
+speed.innerHTML = randomLimit + " ms";
 
 window.onload = () => {
   console.log(randomLimit);
-  alert("this game has a random speed, so sometimes you can have slows speed or fast speed of a lunar.")
-
-}
+  alert(
+    "this game has a random speed, so sometimes you can have slows speed or fast speed of a lunar."
+  );
+};
 
 function moveLunar() {
   timerId = setInterval(randomRound, randomLimit);
 }
 
 moveLunar();
-
