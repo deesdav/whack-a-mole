@@ -3,7 +3,7 @@
 * {
     user-select: none;
     box-sizing: border-box;
-    font-weight: 900;
+    font-weight: bold;
     text-transform: uppercase;
     font-family: 'Domine', serif;
     transition: .5s all;
@@ -100,6 +100,28 @@ a{
     top: 0;
     padding: 0;
     margin: 0;
+    transition: .5s;
+}
+  #krtekimg:hover #clickOnMe{
+    display: none;
+    transition: .5s;
+  }
+#clickOnMe{
+    text-shadow: 0 1px 0px red;
+    display: block;
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    height: 50px;
+    text-align: center;
+    width: 180px;
+    background: white;
+    color: black;
+    animation: pulse infinite 1000ms ease-in-out;
+    padding: 1em;
+    border-radius: 10px;
+    transition: .5s;
+    cursor: default;
 }
 
 #backButton {
