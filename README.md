@@ -1,2 +1,2 @@
 # whack-a-mole
-[View](https://deesdav.github.io/whack-a-mole/)
+[Play](https://deesdav.github.io/whack-a-mole/)
