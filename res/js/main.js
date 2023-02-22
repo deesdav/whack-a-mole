@@ -1,4 +1,5 @@
 const play = document.getElementById("play");
+const doomPlay = document.getElementById("doomPlay");
 const music = document.getElementById("music");
 const musicButton = document.getElementById("musicButton");
 const gameBox = document.getElementById("gameBox");
@@ -95,3 +96,10 @@ function moveLunar() {
 }
 
 moveLunar();
+
+doomPlay.onmouseover = () => {
+  music.src = "https://www.youtube.com/embed/EQmIBHObtCs?autoplay=1";
+}
+doomPlay.onmouseout = () => {
+  music.src = "";
+}
